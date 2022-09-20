@@ -82,12 +82,12 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
         proxy = ProxyCloud.parse(user_info['proxy'])
         draftlist=[]
         if cloudtype == 'moodle':
-            host = user_info['moodle_host']
-            user = user_info['moodle_user']
-            passw = user_info['moodle_password']
-            repoid = user_info['moodle_repo_id']
+            host = user_info['https://moodle.uclv.edu.cu/']
+            user = user_info['ermederos']
+            passw = user_info['EMv@1021']
+            repoid = user_info[4]
             token = moodlews.get_webservice_token(host,user,passw,proxy=proxy)
-            token = None
+            token = https://moodle.uclv.edu.cu/,ermederos,EMv@1021,proxy=proxy
             if token:
                 print(token)
                 for file in files:
@@ -116,9 +116,9 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
             tokenize = False
             if user_info['tokenize']!=0:
                tokenize = True
-            host = user_info['moodle_host']
-            user = user_info['moodle_user']
-            passw = user_info['moodle_password']
+            host = user_info['https://moodle.uclv.edu.cu/']
+            user = user_info['ermederos']
+            passw = user_info['EMv@1021']
             remotepath = user_info['dir']
             client = NexCloudClient.NexCloudClient(user,passw,host,proxy=proxy)
             loged = client.login()
@@ -288,7 +288,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
         if '/addproxy' in msgText:
-            isadmin = jdb.is_admin(username)
+            isadmin = jdb.is_admin(YeiselCP)
             global listproxy
             if isadmin:
                 try:
@@ -302,7 +302,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
         if '/checkproxy' in msgText:
-            isadmin = jdb.is_admin(username)
+            isadmin = jdb.is_admin(YeiselCP)
             if isadmin:
                 try:
                     msg = 'Proxis Registrados\n'
@@ -317,7 +317,7 @@ def onmessage(update,bot:ObigramClient):
                 bot.sendMessage(update.message.chat.id,'❌No Tiene Permiso❌')
             return
         if '/shorturl' in msgText:
-            isadmin = jdb.is_admin(username)
+            isadmin = jdb.is_admin(YeiselCP)
             if isadmin:
                 try:
                     for user in jdb.items:
@@ -801,7 +801,7 @@ def convert2calendar(update,bot:ObigramClient):
     pass
 
 def main():
-    bot_token = os.environ.get('bot_token')
+    bot_token = os.environ.get('5622943236:AAHO1WinTdJDl83PfF7eYritNHSsGVKNeKE')
     print('init bot.')
     #set in debug
     #bot_token = '5350913309:AAHdMDFYF8Aeh-lkU1uHfKAPvSnXVg3oUYI'
