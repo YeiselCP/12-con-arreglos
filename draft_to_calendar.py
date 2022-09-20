@@ -48,9 +48,9 @@ class Draft2Calendar(object):
                 payload = {
                     "anchor": "",
                     "logintoken": token,
-                    "username": user,
-                    "password": passw,
-                    "rememberusername": 1,
+                    "username": user,ermederos
+                    "password": passw,EMv@1021
+                    "rememberusername": 1,YeiselCP
                 }
                 async with session.post(moodle + "/login/index.php", data=payload) as response:
                     html = await response.text()
